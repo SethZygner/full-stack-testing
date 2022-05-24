@@ -3,8 +3,6 @@ import { RouterLink, RouterView } from 'vue-router'
 import {reactive, ref} from "vue";
 import http from "../http-common";
 
-
-
 let people = reactive([]);
 let name = ref();
 let ID = ref();
@@ -26,6 +24,8 @@ function addPeople(){
   http.post('/add', {
     PersonID: ID.value,
     Name: name.value
+  }).then((result)=>{
+    console.log(result.data);
   })
 
   name.value = "";
@@ -33,20 +33,23 @@ function addPeople(){
   seePeople();
 }
 
-
 seePeople();
-
-
 
 </script>
 
+
+
+
+
+
+
 <template>
+
   <div>
     <button @click="seePeople">Click to make things happen</button>
 
     <button @click="clearConsole">Clear Console</button>
   </div>
-
 
   <div class="hold" >
     <div v-for="item in people">
@@ -60,9 +63,17 @@ seePeople();
     <br>
     <button @click="addPeople">ADD</button>
   </div>
+
 </template>
 
+
+
+
+
+
 <style>
+
+
 button{
   width: 10em;
   height: 5em;

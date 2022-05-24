@@ -1,4 +1,3 @@
-
 //All require calls
 const express = require('express');
 const cors = require('cors');
@@ -44,18 +43,12 @@ app.get('/', (req, res)=>{
                 //Response of the array for the front end to use
                 res.send(arr);
         });
-})
-
+});
 
 
 app.post('/add', (req, res)=>{
-
-    //mySQL.query('INSERT INTO test SET ?', [data]);
-
-})
-
-
-
+    
+});
 
 
 app.listen(5000, function () {
