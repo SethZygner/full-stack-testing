@@ -7,7 +7,7 @@ const {query} = require("express");
 const db = require('./models');
 db.sequelize.sync();
 
-require('tutorial.routes');
+require('./userRouters');
 //Only allows to receive requests from this specific URL
 const corsOptions = {
     origin:"http://localhost:3000"
