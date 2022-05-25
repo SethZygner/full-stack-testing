@@ -22,7 +22,7 @@ function clearConsole(){
 
 function addPeople(){
   http.post('/add', {
-    PersonID: ID.value,
+    PersonID: parseInt(ID.value),
     Name: name.value
   }).then((result)=>{
     console.log(result.data);
@@ -34,6 +34,7 @@ function addPeople(){
 }
 
 seePeople();
+
 
 </script>
 
